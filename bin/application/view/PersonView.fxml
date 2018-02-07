@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PersonViewController">
+	<children>
+		<SplitPane dividerPositions="0.4" prefHeight="500.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<items>
+				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+					<children>
+						<HBox spacing="5.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="10.0">
+							<children>
+								<Button fx:id="btnClose" maxHeight="20.0" maxWidth="20.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="control-button">
+									<graphic>
+										<ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+											<image>
+												<Image url="@img/close-circle.png" />
+											</image>
+										</ImageView>
+									</graphic>
+								</Button>
+								<Button fx:id="btnMinimize" maxHeight="20.0" maxWidth="20.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="control-button">
+									<graphic>
+										<ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+											<image>
+												<Image url="@img/minus-circle.png" />
+											</image>
+										</ImageView>
+									</graphic>
+								</Button>
+							</children>
+						</HBox>
+						<Label alignment="CENTER" layoutX="81.0" layoutY="15.0" prefHeight="20.0" styleClass="header" text="All Contacts" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="30.0" />
+						<ListView fx:id="listContacts" layoutX="14.0" layoutY="49.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="110.0" />
+						<TextField fx:id="txtSearch" layoutX="15.0" layoutY="60.0" prefHeight="30.0" promptText="Search" style="-fx-padding: 0.0 15.0 0.0 15.0;" styleClass="search" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="70.0" />
+						<Button fx:id="btnAdd" layoutX="198.0" layoutY="459.0" mnemonicParsing="false" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="15.0">
+							<graphic>
+								<ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@img/plus.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</Button>
+					</children>
+				</AnchorPane>
+				<AnchorPane fx:id="paneDetail" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" visible="false">
+					<children>
+						<ImageView fitHeight="125.0" fitWidth="100.0" layoutX="24.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="25.0">
+							<image>
+								<Image url="@img/dummy.jpg" />
+							</image>
+						</ImageView>
+						<Label fx:id="lblName" layoutX="172.0" layoutY="43.0" styleClass="name" text="Name" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="25.0" />
+						<Label fx:id="lblMobile" layoutX="152.0" layoutY="73.0" styleClass="mobile" text="Mobile" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="75.0" />
+						<Label fx:id="lblEmail" layoutX="152.0" layoutY="110.0" styleClass="email" text="Email" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="100.0" />
+						<Label alignment="CENTER_RIGHT" layoutX="25.0" layoutY="186.0" prefWidth="100.0" styleClass="address-light" text="Address:" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="175.0" />
+						<Label fx:id="txtAddress" alignment="TOP_LEFT" layoutX="208.0" layoutY="183.0" prefHeight="75.0" prefWidth="225.0" styleClass="address" text="Address" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="175.0" />
+						<Separator layoutX="40.0" layoutY="266.0" prefWidth="200.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="275.0" />
+						<Label layoutX="25.0" layoutY="286.0" text="Accounts:" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="290.0" styleClass="header-acccount" />
+						<AnchorPane fx:id="paneAccount" prefWidth="300.0" styleClass="pane-drop" visible="false" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0">
+							<children>
+								<Label styleClass="header-2" text="Account" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+								<ComboBox fx:id="cboxAcType" prefWidth="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="25.0" />
+								<TextField fx:id="txtAcName" styleClass="text-input" AnchorPane.leftAnchor="115.0" AnchorPane.topAnchor="25.0" />
+								<Button fx:id="btnSaveAc" mnemonicParsing="false" text="SAVE" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0" />
+								<Button fx:id="btnAcClose" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="control-button" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-5.0">
+									<graphic>
+										<ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+											<image>
+												<Image url="@img/close-circle.png" />
+											</image>
+										</ImageView>
+									</graphic>
+								</Button>
+							</children>
+							<padding>
+								<Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+							</padding>
+						</AnchorPane>
+						<Button fx:id="btnAddCcount" layoutX="328.0" layoutY="288.0" mnemonicParsing="false" text="Account" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="290.0">
+							<graphic>
+								<ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@img/plus.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</Button>
+					</children>
+				</AnchorPane>
+			</items>
+		</SplitPane>
+	</children>
+</AnchorPane>

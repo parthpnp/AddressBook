@@ -1,0 +1,18 @@
+/* CSS Document */
+
+.text_link{
+	color: #FFFFFF;
+	font-weight: bold;
+}
+.marun_link {
+	color: #CC0000;
+	font-weight: bold;
+}
+.red_text {
+	color: #FF0000;
+}
+.bold {
+	font-style: normal;
+	font-weight: bold;
+	color: #000000;
+}
